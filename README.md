@@ -16,7 +16,7 @@ wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.9.tar.xz
 tar xf linux-6.12.9.tar.xz
 cd linux-6.12.9
 wget https://raw.githubusercontent.com/frivermen/allwinner_a13_debian/refs/heads/main/.config
-ARCH=arm CROSS_COMPILE=binutils-arm-linux-gnueabihf make menuconfig
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make menuconfig
 # fix bugs
 sed -i 's/--unsigned-changes/-d --unsigned-changes/' scripts/Makefile.package
 sed -i 's/CONFIG_LOCALVERSION="-ARCH"/CONFIG_LOCALVERSION="-armhf"/' .config
